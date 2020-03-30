@@ -8,9 +8,10 @@ spatial_setup:
   base_path: data
 
   setup_name: minimal
+  nodenames: geoid
   geodata: geodata.csv
   mobility: mobility.txt
-  popnodes: population
+  popnodes: pop2010
   include_in_report: include_in_report
 
 interventions:
@@ -61,6 +62,10 @@ seir:
       distribution: uniform
       low: 2
       high: 3
+
+seeding:
+  method: PoissonDistributed
+  lambda_file: data/seeding.csv
 
 hospitalization:
   paths:
